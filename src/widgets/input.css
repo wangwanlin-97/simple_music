@@ -1,0 +1,26 @@
+.input_item {
+    width: 90%;
+    display: flex;
+    margin: 3px auto;
+    color: aqua;
+}
+
+.input_item .input_item_name {
+    /* display: inline-block; */
+    width: 50px;
+}
+
+.input_item .input_item_box {
+    flex: 1 1 30px;
+    outline: none;
+    border: 1px solid aqua;
+    caret-color: red;
+}
+
+.button {
+    margin: 4px 2px;
+    background-color: transparent;
+    border: 2px solid aqua;
+    color: aquamarine;
+    cursor: pointer;
+}

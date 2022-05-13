@@ -1,0 +1,91 @@
+.list_container {
+
+    width: 100%
+}
+
+.title_bar {
+    position: relative;
+}
+
+.title_bar .icon-editlist::before {
+    content: '\ea0a';
+    font-size: 12px;
+    position: absolute;
+    right: 50px;
+    top: 50%;
+    color: black;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+}
+
+.list_container ul li {
+    position: relative;
+    margin: 8px auto;
+    width: 90%;
+    border-bottom: 1px solid pink;
+    overflow: hidden;
+}
+
+.list_container ul li img {
+    display: inline-block;
+    width: 34px;
+    margin-right: 5px;
+}
+
+.list_container ul li span {
+    position: absolute;
+    top: 0;
+    height: 34px;
+    line-height: 34px;
+}
+
+.list_container ul li .checkbox {
+    display: none;
+}
+
+.list_container ul li:hover .icon-delete_button {
+    display: block;
+}
+
+.list_container ul li:hover .checkbox {
+    display: block;
+    float: right;
+    position: absolute;
+    right: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+}
+
+.playlist_op {
+    position: absolute;
+    right: 40px;
+    top: 20px;
+    border: 1px solid pink;
+}
+
+.addsong {
+    color: #333;
+}
+
+.icon-delete_button::before {
+    content: '\ebee';
+}
+
+.icon-delete_button {
+    display: none;
+    position: absolute;
+    right: 20px;
+}
+
+
+/* .lazyload-wrapper {
+    display: inline-block;
+    height: 34px;
+} */

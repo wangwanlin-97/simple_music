@@ -1,0 +1,22 @@
+.mv-title {
+    margin: 5px;
+    text-align: center;
+    /* width: 100%; */
+}
+
+.mv-description {
+    margin: 10px 0;
+}
+
+.mv-artists {
+    margin-top: 5px;
+    font-size: 12px;
+}
+
+.mv-artists span {
+    padding: 0 5px;
+}
+
+.side-box {
+    width: 80vw;
+}

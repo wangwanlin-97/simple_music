@@ -1,0 +1,44 @@
+/* header {
+    position: relative;
+    width: 100%;
+    height: 40px;
+    border: 1px solid blue;
+    top: 0;
+} */
+header {
+    display: flex;
+    align-items: center;
+}
+
+header span:first-child {
+
+    width: 50px;
+    line-height: 40px;
+    height: 100%;
+    /* border: 1px solid red; */
+
+}
+
+header .title {
+    flex: 1;
+    /* line-height: 38px; */
+    text-align: center;
+}
+
+header span:last-child {
+    flex: 0 1 auto;
+    /*border: 1px solid red;
+    */
+    text-align: center;
+    line-height: 27px;
+
+    margin: 0 5px;
+    width: 40px;
+    height: 30px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
+}

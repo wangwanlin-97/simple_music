@@ -1,0 +1,63 @@
+.commentbox .commentItem {
+    display: flex;
+    margin-top: 25px;
+    border-bottom: 1px solid #ccc;
+    flex-direction: column;
+    padding-bottom: 3px
+}
+
+.subcommentItem {
+    width: 80%;
+}
+
+.commentbox .commentItem .comment-userinfo {
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+    align-items: center;
+    /* flex-direction: column; */
+    /* position: relative; */
+    /* width: 40px; */
+    /* flex: 0; */
+    /* margin-right: 20px; */
+}
+
+.commentbox .commentItem .comment-userinfo .avatarbox {
+    /* display: inline-block; */
+    width: 40px;
+    margin-right: 10px;
+
+    flex: 0 0 auto;
+}
+
+.commentbox .commentItem .comment-userinfo .avatarbox .avatar {
+    width: 100%;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+
+.commentbox .commentItem .comment-userinfo .nickname {
+    /* position: absolute; */
+    display: block;
+    /* left: 0; */
+    /* top: -22px; */
+    white-space: nowrap;
+    color: rgb(198, 198, 186);
+    cursor: pointer;
+}
+
+.commentbox .commentItem .comment-content {
+    /* flex: 1; */
+    width: 100%;
+}
+
+.replied {
+    width: 100%;
+}
+
+.reply {
+    font-weight: bold;
+}
