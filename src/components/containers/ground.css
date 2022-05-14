@@ -29,6 +29,7 @@
     -ms-border-radius: 5px;
     -o-border-radius: 5px;
     -webkit-border-radius: 5;
+    white-space: nowrap;
 }
 
 .playlist {
