@@ -5,9 +5,10 @@
     transform: translate(-50%, -50%);
     border: 1px solid rgb(73, 240, 209);
     margin: 0 auto;
-    width: 30vw;
+    width: 60vw;
     text-align: center;
     /* height: 80px; */
+    z-index: 2;
     -webkit-transform: translate(-50%, -50%);
     -moz-transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);

@@ -44,8 +44,17 @@
     const a = document.getElementsByClassName('box')
     console.log(a[0].offsetLeft)
     a[0].onclick = (e) => {
+        //使用translate会影响元素的offset值
         console.log(e.clientX - (e.target.offsetLeft - e.target.clientWidth / 2) - e.target.offsetParent.offsetLeft)
     }
+
+    const t = setInterval(() => { }, 1)
+    const p = setTimeout(() => { }, 4)
+    const w = setTimeout(() => {
+
+    }, 4);
+    //打印的值为3，所以在使用循环清除定时器时不会区分timeout和interval
+    console.log(w)
 </script>
 
 </html>

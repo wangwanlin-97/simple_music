@@ -65,7 +65,8 @@ const nowPlayingSlice = createSlice({
         searchlist: [],
         searchword: '',
         playmode: 0,
-        ismvplaying: false
+        ismvplaying: false,
+        showlist: false
 
     },
     reducers: {
@@ -113,6 +114,9 @@ const nowPlayingSlice = createSlice({
         },
         togglemvplaying: (state, action) => {
             state.ismvplaying = action.payload
+        },
+        toggleshowlist: (state, action) => {
+            state.showlist = action.payload
         }
 
     }
@@ -133,7 +137,7 @@ const selectedtagSlice = createSlice({
 
 export const { ground, list, myList } = sightSlice.actions
 export const { showBar, hideBar, settrue, setfalse } = sideBarSlice.actions
-export const { getsongurl, toggle, changebig, savePlayInfo, saveSongInfo, savePlaylist, setIndex, toggleIsShow, toggleManualyFlag, toggleSearchType, toggleSearchlist, togglesearchword, toggleplaymode, togglemvplaying } = nowPlayingSlice.actions
+export const { getsongurl, toggle, changebig, savePlayInfo, saveSongInfo, savePlaylist, setIndex, toggleIsShow, toggleManualyFlag, toggleSearchType, toggleSearchlist, togglesearchword, toggleplaymode, togglemvplaying, toggleshowlist } = nowPlayingSlice.actions
 export const { saveTag } = selectedtagSlice.actions
 
 export const store = configureStore({
