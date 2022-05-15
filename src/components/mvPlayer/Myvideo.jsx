@@ -107,6 +107,7 @@ export default function Myvideo(props) {
             tabIndex='1'
             ref={bref} className='videobox'>
             <video
+                controls={false}
                 onPlaying={() => { setplaying(true) }}
                 onPause={() => { setplaying(false) }}
                 onTimeUpdate={(e) => {
