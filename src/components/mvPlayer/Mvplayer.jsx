@@ -44,18 +44,20 @@ function Mvplayer(props) {
         })
     }, [page])
     return (
-        <div>
+        <div style={{ display: 'flex', flexDirection: 'column' }}>
             <div className='mv-title'>{mvinfo.name}<span onClick={() => { navigate(-1) }} className='back'>返回</span></div>
-            <div className='mv-description'>{mvinfo.desc}</div>
+
             {/* <video width={375} controls src={`${mvurl}`}></video> */}
             <Myvideo ismvplaying={ismvplaying} togglemvplaying={togglemvplaying} src={`${mvurl}`}></Myvideo>
+            <div className='mv-artists'>歌手：
+                {
+                    mvinfo.artists && mvinfo.artists.map(item => <span key={item.id}>{item.name}</span>)
+                }
+                <span style={{ float: 'right' }}>播放{mvinfo.playCount}次</span>
+            </div>
+            <div className='mv-description'>{mvinfo.desc}</div>
             <div className='side-box'>
-                <div className='mv-artists'>歌手：
-                    {
-                        mvinfo.artists && mvinfo.artists.map(item => <span key={item.id}>{item.name}</span>)
-                    }
-                    <span style={{ float: 'right' }}>播放{mvinfo.playCount}次</span>
-                </div>
+
                 <div>
                     <span onClick={() => {
 

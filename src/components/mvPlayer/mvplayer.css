@@ -5,12 +5,15 @@
 }
 
 .mv-description {
+    text-indent: 2em;
     margin: 10px 0;
+    width: 80vw;
 }
 
 .mv-artists {
     margin-top: 5px;
     font-size: 12px;
+    width: 80vw;
 }
 
 .mv-artists span {

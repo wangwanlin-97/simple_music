@@ -6,6 +6,9 @@ export default function Myvideo(props) {
 
     const { ismvplaying, togglemvplaying } = props
 
+    const app = navigator.appVersion.indexOf('Mobile')
+    // console.log(app)
+
     //获取video标签节点
     const vref = useRef()
     //获取最外层标签节点
@@ -44,17 +47,29 @@ export default function Myvideo(props) {
     }
     return (
         <div onClick={() => {
-            // console.log(vref.current.played)
-            clearTimmer()
-            //设置定时器来延迟单击事件的触发，来避免在双击时触发两次单击事件
-            setTimeout(() => {
-                if (playing) {
-                    vref.current.pause()
+            if (app !== -1) {
 
-                } else {
-                    vref.current.play()
-                }
-            }, 200);
+                setactive(() => !active)
+
+            } else {
+                // console.log(vref.current.played)
+                clearTimmer()
+                console.log('click')
+                //设置定时器来延迟单击事件的触发，来避免在双击时触发两次单击事件
+                setTimeout(() => {
+                    if (playing) {
+                        vref.current.pause()
+
+
+                    } else {
+                        vref.current.play()
+                    }
+                    setTimeout(() => {
+                        console.log('timmer')
+                        setactive(() => false)
+                    }, 2000)
+                }, 200);
+            }
         }} onDoubleClick={(e) => {
             clearTimmer()
             if (document.fullscreenElement == null) {
@@ -66,12 +81,14 @@ export default function Myvideo(props) {
                 setisfull(false)
             }
         }} onMouseMove={() => {
-            clearTimmer()
-
-                ; setactive(true);
-            setTimeout(() => {
-                setactive(() => false)
-            }, 2000);
+            if (app === -1) {
+                clearTimmer()
+                console.log('move')
+                    ; setactive(true);
+                setTimeout(() => {
+                    setactive(() => false)
+                }, 2000);
+            }
 
         }} onKeyUp={(e) => {
             //按下空格键可实现暂停和播放
@@ -104,8 +121,8 @@ export default function Myvideo(props) {
                 //当鼠标在播放界面移动时，active为true，控件渲染，鼠标停止移动2秒后active为false控件隐藏
                 active &&
                 <div
-                    onMouseEnter={() => { clearTimmer(); setactive(true); console.log(1) }}
-                    onMouseLeave={() => { setactive(false) }}
+                    // onMouseEnter={() => { clearTimmer(); setactive(true); console.log(1) }}
+                    // onMouseLeave={() => { setactive(false) }}
                     onClick={(e) => { e.stopPropagation() }}
                     className='controll_full '>
                     {/* <div className='video-ctr'> */}

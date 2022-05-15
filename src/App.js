@@ -4,7 +4,7 @@ import './App.css'
 import MyRoutes from './router/MyRoutes';
 import { connect } from 'react-redux';
 import { useEffect, useRef, useState } from 'react';
-import { toggle, savePlayInfo, setIndex, savePlaylist, toggleManualyFlag, toggleIsShow } from './redux/store';
+import { toggle, savePlayInfo, setIndex, savePlaylist, toggleManualyFlag, toggleIsShow, toggleprestate } from './redux/store';
 import Miniplayer from './components/miniplayer/Miniplayer';
 import Player from './components/player/Player';
 // import { icons } from 'antd/lib/image/PreviewGroup';
@@ -27,7 +27,7 @@ function App(props) {
 
 
   const { ismvplaying, isplaying, toggle, currentIndex, setIndex, savePlaylist, playlist, toggleManualyFlag, manualyFlag
-    , toggleIsShow, isshow, playmode } = props
+    , toggleIsShow, isshow, playmode, prestate, toggleprestate } = props
 
   // useEffect(() => {
   //   // clearInterval(interval)
@@ -65,12 +65,14 @@ function App(props) {
   useEffect(() => {
     // alert('q')
     if (ismvplaying) {
+      toggleprestate(isplaying)
       if (isplaying)
+
         toggle(false)
       // audisref.current.pause()
       // console.log('w')
     } else {
-      if (playlist.length > 0)
+      if (playlist.length > 0 && prestate)
         toggle(true)
       // audisref.current.play()
       // console.log('e')
@@ -277,9 +279,10 @@ export default connect((state) => {
     manualyFlag: state.nowPlayingSlicereducer.manualyFlag,
     isshow: state.nowPlayingSlicereducer.isShow,
     playmode: state.nowPlayingSlicereducer.playmode,
-    ismvplaying: state.nowPlayingSlicereducer.ismvplaying
+    ismvplaying: state.nowPlayingSlicereducer.ismvplaying,
+    prestate: state.nowPlayingSlicereducer.prestate
 
   }
 
-}, { toggle, savePlayInfo, setIndex, toggleManualyFlag, toggleIsShow })(App)
+}, { toggle, savePlayInfo, setIndex, toggleManualyFlag, toggleIsShow, toggleprestate })(App)
 
