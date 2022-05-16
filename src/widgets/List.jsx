@@ -224,15 +224,15 @@ function List(props) {
                                 } else {
                                     toggle(false);
                                     // playlist.push(item);
-                                    console.log('前', playlist.length)
+                                    // console.log('前', playlist.length)
                                     savePlaylist([item])
                                     toggleManualyFlag(true)
                                     setIndex(0)
 
-                                    console.log('后', playlist.length)
+                                    // console.log('后', playlist.length)
 
                                     // setIndex(playlist.length - 1);
-                                    handleGetSongUrl.current(item.id, { name: item.name, author: item.al.name, picUrl: item.al.picUrl });
+                                    handleGetSongUrl.current(item.id, { id: item.id, name: item.name, author: item.al.name, picUrl: item.al.picUrl });
                                 }
                             }} key={item.id}>
                                 <><img className='songimg'

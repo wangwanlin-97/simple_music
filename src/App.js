@@ -106,6 +106,7 @@ function App(props) {
   }
   const closetimmer = () => {
     //清除所有定时器
+    console.log('清除')
     var qc = setInterval(() => { }, 1)
     for (var i = 0; i < qc; i++) {
       clearInterval(i)
@@ -116,6 +117,7 @@ function App(props) {
   const handleEnd = () => {
     audisref.current.pause()
     props.toggle(false); closetimmer()
+    console.log('end')
     //顺序播放
     if (playmode == 0) {
       console.log('playmode', 0)
@@ -247,7 +249,7 @@ function App(props) {
         // height: '50px',
         overflow: 'hidden'
       }}>
-        <audio onEmptied={() => { console.log('emptied') }} onAbort={() => { console.log('abort') }} onStalled={() => { console.log('stalled') }} onError={() => { console.log('wrong'); handleEnd() }} onPlay={() => { runtimmer() }} onEnded={() => { handleEnd() }} ref={audisref} className='w' autoPlay style={{ display: 'none', width: '100vw', height: '0' }} controls src={playlist.length > 0 ? `https://music.163.com/song/media/outer/url?id=${playlist[currentIndex].id}.mp3 ` : ''}></audio>
+        <audio onEmptied={() => { console.log('emptied') }} onAbort={() => { console.log('abort') }} onStalled={() => { console.log('stalled') }} onPlay={() => { runtimmer() }} onEnded={() => { handleEnd() }} ref={audisref} className='w' autoPlay style={{ display: 'none', width: '100vw', height: '0' }} controls src={playlist.length > 0 ? `https://music.163.com/song/media/outer/url?id=${playlist[currentIndex].id}.mp3 ` : ''}></audio>
         {!props.isbig && isplaying && <Miniplayer
           // cleartimmer={() => { closetimmer() }}
           // starttimmer={() => { runtimmer() }}

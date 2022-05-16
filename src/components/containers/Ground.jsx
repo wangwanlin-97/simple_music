@@ -4,11 +4,12 @@ import './ground.css'
 
 import { connect } from 'react-redux'
 import { getsongurl } from '../../redux/store'
-import { useNavigate } from 'react-router-dom'
+// import { useNavigate } from 'react-router-dom'
 import { saveTag } from '../../redux/store'
 import List from '../../widgets/List'
-import LazyLoad from 'react-lazyload'
+// import LazyLoad from 'react-lazyload'
 import Biglist from '../../widgets/Biglist'
+import Banner from '../../widgets/Banner'
 
 function Ground(props) {
 
@@ -16,15 +17,17 @@ function Ground(props) {
 
 
     const [tags, settags] = useState([])
-    const [currenttag, setcurrenttag] = useState('')
+    // const [currenttag, setcurrenttag] = useState('')
     const [tagSonglist, settagSonglist] = useState([])
     const [moreList, setmoreList] = useState(false)
     const [recommend, setrecommend] = useState([])
+    const [banners, setbanners] = useState([])
 
 
 
     //navigate钩子
-    const navigate = useNavigate()
+    // const navigate = useNavigate()
+
 
     useEffect(() => {
         axios.get(`/playlist/catlist`, { withCredentials: true }).then(res => {
@@ -34,6 +37,11 @@ function Ground(props) {
         axios.get(`/recommend/songs`).then(res => {
             // console.log(res.data)
             setrecommend(res.data.data.dailySongs)
+        })
+        console.log(2)
+        axios.get(`/homepage/block/page`).then(res => {
+            console.log(res.data)
+            setbanners(res.data.data.blocks[0].extInfo.banners.filter(item => item.typeTitle != '广告' && item.typeTitle != '新碟首发' && item.typeTitle != '直播'))
         })
     }, [])
     useEffect(() => {
@@ -55,6 +63,9 @@ function Ground(props) {
     return (
         <>
             <div className='box'>
+                <div style={{ width: '100vw', overflow: 'hidden' }}>
+                    <Banner data={banners}></Banner>
+                </div>
                 <div className='title_bar'><span className='tag_title'>标签</span></div>
                 <ul className='tags'>
                     {

@@ -27,6 +27,7 @@
     width: 90%;
     border-bottom: 1px solid pink;
     overflow: hidden;
+    cursor: pointer;
 }
 
 .list_container ul li img {

@@ -72,9 +72,15 @@ body {
   position: absolute;
   right: 10px;
   bottom: 100px;
-  background-color: aqua;
+  padding: 0 4px;
+  background-color: rgba(31, 239, 239, .5);
   cursor: pointer;
   z-index: 99999;
+  border-radius: 6px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
 }
 
 .loginput {
