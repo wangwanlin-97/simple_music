@@ -34,7 +34,7 @@ function Ground(props) {
             // console.log(res.data)
             settags(res.data.sub)
         })
-        axios.get(`/recommend/songs`).then(res => {
+        axios.get(`/recommend/songs?timestamp=${Date.now()}`).then(res => {
             // console.log(res.data)
             setrecommend(res.data.data.dailySongs)
         })
