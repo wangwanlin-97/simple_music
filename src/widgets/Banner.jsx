@@ -29,14 +29,14 @@ function Banner(props) {
 
                         }} onTouchEnd={(e) => {
                             console.log(e.changedTouches[0].clientX)
-                            if (e.changedTouches[0].clientX - start > 150) {
+                            if (e.changedTouches[0].clientX - start < - 150) {
                                 if (index < data.length - 1) {
                                     setindex(index => index + 1)
                                 }
                                 else {
                                     setindex(0)
                                 }
-                            } else if (e.changedTouches[0].clientX - start < - 150) {
+                            } else if (e.changedTouches[0].clientX - start > 150) {
                                 if (index > 0) {
                                     setindex(index => index - 1)
                                 }
