@@ -4,7 +4,6 @@ import {store} from "../redux/store"
 axios.defaults.baseURL =
   "https://netease-cloud-music-6g6muoojt-wangwanlin-97.vercel.app/"
 
-axios.defaults.baseURL = "http://119.3.37.42:3004"
 axios.defaults.withCredentials = true
 //使用axios拦截器
 
