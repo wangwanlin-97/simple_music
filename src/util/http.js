@@ -1,28 +1,36 @@
-import axios from "axios";
-import { store } from "../redux/store";
+import axios from "axios"
+import {store} from "../redux/store"
 
+axios.defaults.baseURL =
+  "https://netease-cloud-music-6g6muoojt-wangwanlin-97.vercel.app/"
 
-axios.defaults.baseURL = 'https://netease-cloud-music-6g6muoojt-wangwanlin-97.vercel.app/'
+axios.defaults.baseURL = "http://119.3.37.42:3004"
 axios.defaults.withCredentials = true
 //使用axios拦截器
 
 //请求拦截器
-axios.interceptors.request.use(config => {
+axios.interceptors.request.use(
+  config => {
     //发送请求之前做某些事
 
-    store.dispatch({ type: 'sidebar/settrue' })
+    store.dispatch({type: "sidebar/settrue"})
 
     return config
-}, err => {
+  },
+  err => {
     //请求错误时做某事
     return Promise.reject(err)
-})
+  },
+)
 //响应拦截器
-axios.interceptors.response.use(response => {
+axios.interceptors.response.use(
+  response => {
     //对响应数据做某些事
     // setfalse()
-    store.dispatch({ type: 'sidebar/setfalse' })
+    store.dispatch({type: "sidebar/setfalse"})
     return response
-}, err => {
+  },
+  err => {
     return Promise.reject(err)
-})
+  },
+)

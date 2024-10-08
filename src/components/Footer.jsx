@@ -6,7 +6,6 @@ import { connect } from 'react-redux'
 import { ground, list, myList, hideBar } from '../redux/store';
 
 function Footer(props) {
-    console.log(props)
     return (
         <>
 
