@@ -199,6 +199,7 @@ function Mv(props) {
               // data === undefined ?
               songlist.map(item => (
                 <li
+                  style={{height:"28px"}}
                   key={item.id}
                   onClick={() => {
                     navigate(`/mv/${item.id}`)
